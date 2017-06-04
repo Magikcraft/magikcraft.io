@@ -59,6 +59,23 @@ declare namespace eventbus {
      * 
      */
     export function publish(topic: string, data: string | Object);
+
+    /**
+     * To cancel a subscription, you call the `cancel()` method of the subscription object returned from `eventbus.subscribe()`. However, sometimes you lose the reference to that object - or you want to unsubscribe a bunch of listeners all at once.
+     * 
+     * In this case, you can use `eventbus.unsubscribeFromTopic()`. You specify which topic you want to unsubscribe from, and all your subscriptions to that topic will be cancelled.
+     * 
+     * This does not unsubscribe anyone else - just your subscriptions.
+     * 
+     * ```
+     * // Subscribe without getting a reference to the subscription
+     * eventbus.subscribe('magikcraft.news', news => magik.dixit(news.data));
+     * ...
+     * // Somewhere else, we don't have a subscription to cancel, but we can cancel all subscriptions to that topic:
+     * eventbus.unsubscribeFromTopic('magikcraft.news');
+     * ```
+     */
+    export function unsubscribeFromTopic(topic: string): boolean;
 }
 
 declare module "eventbus" {
