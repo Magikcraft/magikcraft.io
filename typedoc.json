@@ -4,6 +4,7 @@
   "out": "doc",
   "target": "ES5",
   "ignoreCompilerErrors": "false",
+  "excludePrivate": "true",
   "preserveConstEnums": "true",
   "includes": "src",
   "excludeExternals": "true",
