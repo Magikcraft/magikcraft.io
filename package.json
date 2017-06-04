@@ -1,0 +1,19 @@
+{
+  "name": "magikcraft.d.ts",
+  "version": "1.0.0",
+  "description": "The Magikcraft API Documentation",
+  "main": "index.ts",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/typedoc --options typedoc.json",
+    "test": "echo \"I don't always test, but when do it's in production...\" && exit 1"
+  },
+  "author": "Josh Wulf <josh@magikcraft.io>",
+  "license": "ISC",
+  "dependencies": {
+    "typedoc": "^0.7.1",
+    "typedoc-dash-theme": "^1.1.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Magikcraft API Documentation",
+  "mode": "file",
+  "out": "doc",
+  "target": "ES5",
+  "ignoreCompilerErrors": "false",
+  "preserveConstEnums": "true",
+  "includes": "src",
+  "excludeExternals": "true",
+  "exclude": "node_modules/@types/*",
+  "includeDeclarations": "true",
+  "external-modulemap": ".*\/modules\/@mycompany\/([\\w\\-_]+)\/",
+  "stripInternal": "false",
+  "theme": "node_modules/typedoc-dash-theme"
+}
