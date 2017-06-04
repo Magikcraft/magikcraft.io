@@ -76,6 +76,16 @@ declare namespace eventbus {
      * ```
      */
     export function unsubscribeFromTopic(topic: string): boolean;
+
+    /**
+     * Sometimes, things get real messed up and you just need to hit the reset button.
+     * 
+     * You can quit from the server and rejoin, and this will clear all your eventbus subscriptions. 
+     * 
+     * You can also call `eventbus.cancelAllSubscriptions()`. This will cancel all subscriptions you have created for all topics.
+     * 
+     */
+    export function cancelAllSubscriptions(): boolean;
 }
 
 declare module "eventbus" {
