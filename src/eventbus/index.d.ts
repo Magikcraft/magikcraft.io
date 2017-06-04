@@ -5,22 +5,27 @@
  *
  */
 declare namespace eventbus {
-    export interface MessageData {
+    export type MessageData = {
         data: string | Object;
         type: string;
     }
 
-    export type SubscriptionCallback = (msg: MessageData) => void;
+    /**
+     * Your subscription callback function will receive a single parameter of type `MessageData`.
+     */
+    export type SubscriptionCallback = (message: MessageData) => void;
 
     export interface Subscription {
         /**
          * Cancel the subscription. This stops your callback from being triggered when this topic is published.
-         * @example const mysub = eventbus.subscribe('sitapati.highscore', (score) => {
+         * ```
+         * const mysub = eventbus.subscribe('sitapati.highscore', (score) => {
          *      if (score === "-1") {
-         *          return mysub.cancel();
+         *          return mysub.cancel(); // Stop listening to this topic.
          *      }
          *      magik.dixit(`High score is ${score`);
          * });
+         * ```
          * @memberof Subscription
          */
         cancel(): void;
@@ -29,24 +34,28 @@ declare namespace eventbus {
      * Subscribe to a topic on the eventbus.
      * Topic names are arbitrary, and the topic namespace is global, so you probably want to namespace your topics, for example by using your username, like: 'sitapati.myTopic'
      * 
-     * @example const sub = eventbus.subscribe('sitapati.messages', (msg) => {
-     *      if (typeof msg === "string") {
-     *          magik.dixit(msg);
+     * ```
+     * const sub = eventbus.subscribe('sitapati.messages', (msg) => {
+     *      if (msg.type === "string") {
+     *          magik.dixit(msg.data);
      *      }
-     *      if (typeof msg === "Object") {
-     *          magik.dixit(Object.keys(msg).toString());
+     *      if (msg.type === "json") {
+     *          magik.dixit(Object.keys(msg.data).toString());
      *      }
      * });
-     * @param {string} topic 
-     * @param {SubscriptionCallback} callback 
+     * ```
      */
     export function subscribe(topic: string, callback: SubscriptionCallback): Subscription;
 
 
     /**
+     * Publish to a topic. You can publish a string, or a JSON Object.
      * 
-     * @example eventbus.publish('sitapati.messages', 'Hope everyone is feeling fabulous today!');
+     * ```
+     * eventbus.publish('sitapati.messages', 'Hope everyone is feeling fabulous today!');
+     * 
      * eventbus.publish('sitapati.messages', {data: 'You can also publish JSON objects', moredata: 'The consumer should check the data type in their subscription'});
+     * ```
      * 
      */
     export function publish(topic: string, data: string | Object);
