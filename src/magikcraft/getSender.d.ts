@@ -1,4 +1,4 @@
-declare namespace magikcraft.io {
+declare namespace magikcraft {
     export namespace io {
        /**
          * Return a reference to the current player Bukkit API object.
