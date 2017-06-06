@@ -74,11 +74,6 @@ declare namespace magikcraft {
         export function getPlugin(): BukkitPlugin;
 
         /**
-         * Return the current player.
-         *
-         */
-        export function getSender(): BukkitPlayer;
-        /**
         * Execute the callback function once, after the delay in milliseconds
         **/
         export function setTimeout(callback: Function, delay: number): number;
@@ -94,26 +89,6 @@ declare namespace magikcraft {
          * Get your current location.
          */
         export function hic(): BukkitLocation;
-
-        /**
-         *
-         * Strike lightning.
-         *
-         * Defaults to where you are looking if you do not specify a location.
-         */
-        export function shakti(location?: BukkitLocation): void;
-
-        /**
-         * Jump into the air.
-         * 
-         * The power parameter is between 0 and 100 - it is a percentage of your maximum jumping power.
-         */
-        export function exsultus(power: number): void;
-
-        /**
-         * Call the supplied task function the specified number of times. When finished, call the finished callback. Delay is the number of milliseconds between invocations of the task function.
-         */
-        export function doNTimes(task: Function, times: number, finished: Function, delay: number): void;
 
         /**
          * 
