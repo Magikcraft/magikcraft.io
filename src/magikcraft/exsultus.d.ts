@@ -6,7 +6,7 @@ declare namespace magikcraft {
          *
          * The power parameter is between 0 and 100 - it is a percentage of your maximum jumping power.
          *
-         *
+         * Example:
          * ```
          * const magik = magikcraft.io;
          *
@@ -16,7 +16,5 @@ declare namespace magikcraft {
          * ```
          */
         export function exsultus(power: number): void;
-
-
     }
 }

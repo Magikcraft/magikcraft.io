@@ -98,21 +98,7 @@ declare namespace magikcraft {
          */
         export function aspecto(): BukkitLocation;
 
-        /**
-         * This is the equivalent of `console.log`. It prints a message out to the user's Minecraft console. It's useful for debugging.
-         * 
-         * You can send a message to another user by passing their name as the optional second argument.
-         * 
-         */
-        export function dixit(message: string, playername?: string): void;
 
-        /**
-         * The caldarium function takes an array of ingredients and returns a secret. Sometimes it's a new function name, sometimes it's a clue.
-         *
-         */
-        export function caldarium(ingredientsList: string[]): string;
-
-        
         /**
          * User interface bars. These use BossBarAPI.
          */
