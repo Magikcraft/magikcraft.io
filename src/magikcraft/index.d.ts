@@ -85,19 +85,6 @@ declare namespace magikcraft {
         * Clear the interval timer.
         **/
         export function clearInterval(handle: number): void;
-        /**
-         * Get your current location.
-         */
-        export function hic(): BukkitLocation;
-
-        /**
-         * 
-         * Return the location where you are looking.
-         * 
-         * @returns {BukkitLocation} 
-         */
-        export function aspecto(): BukkitLocation;
-
 
         /**
          * User interface bars. These use BossBarAPI.
