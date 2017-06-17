@@ -87,7 +87,3 @@ declare namespace eventbus {
      */
     export function cancelAllSubscriptions(): boolean;
 }
-
-declare module "eventbus" {
-    export = eventbus;
-}
