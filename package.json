@@ -8,7 +8,7 @@
     "doc": "doc"
   },
   "scripts": {
-    "start": "node_modules/.bin/typedoc --options typedoc.json",
+    "build-doc": "node_modules/.bin/typedoc --readme src/README.md --options typedoc.json",
     "test": "echo \"I don't always test, but when do it's in production...\" && exit 1"
   },
   "author": "Josh Wulf <josh@magikcraft.io>",

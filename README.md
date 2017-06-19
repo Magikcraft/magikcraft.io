@@ -1,6 +1,18 @@
 # Magikcraft API Documentation
 
-This is the documentation for the Magikcraft API.
+These are the TypeScript definitions for the Magikcraft API.
+
+To install these types and use them in Visual Studio Code or similar:
+
+```
+yarn add magikcraft.io
+```
+
+Or, if you are old-school:
+
+```
+npm i -S magikcraft.io
+```
 
 Check out [https://www.magikcraft.io](https://www.magikcraft.io).
 
