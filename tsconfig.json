@@ -52,5 +52,11 @@
   },
   "exclude": [
     "node_modules/**/*"
-  ]
+  ],
+  "typeAcquisition": {
+    "exclude": [
+      "dist",
+      "src/**.*"
+    ]
+  }
 }

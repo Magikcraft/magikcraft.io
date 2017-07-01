@@ -1,6 +1,6 @@
 {
   "name": "magikcraft.io",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "The Magikcraft API",
   "main": "./src/index.d.ts",
   "typings": "./src/index",
@@ -8,12 +8,15 @@
     "doc": "doc"
   },
   "scripts": {
+    "build": "node_modules/.bin/gulp intellisense",
     "build-doc": "node_modules/.bin/typedoc --readme src/README.md --options typedoc.json",
     "test": "echo \"I don't always test, but when do it's in production...\" && exit 1"
   },
   "author": "Josh Wulf <josh@magikcraft.io>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "typedoc": "^0.7.1",
     "typedoc-dash-theme": "^1.1.0"
   }
