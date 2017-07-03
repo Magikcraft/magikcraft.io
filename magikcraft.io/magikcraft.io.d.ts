@@ -429,6 +429,9 @@ declare namespace magikcraft {
         }
 
         export interface BukkitPlayer {
+            addPotionEffect(effect: any): void;
+            getFoodLevel(): number;
+            setFoodLevel(level: number): void;
             getWorld(): BukkitWorld;
             getName(): string;
             getLocation(): BukkitLocation;
