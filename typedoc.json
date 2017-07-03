@@ -6,7 +6,7 @@
   "ignoreCompilerErrors": "false",
   "excludePrivate": "true",
   "preserveConstEnums": "true",
-  "includes": "src",
+  "includes": ".",
   "excludeExternals": "true",
   "exclude": "node_modules/@types/*",
   "includeDeclarations": "true",
