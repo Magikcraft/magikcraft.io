@@ -1,9 +1,9 @@
 {
   "name": "magikcraft.io",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "The Magikcraft API",
-  "main": "./src/index.d.ts",
-  "typings": "./src/index",
+  "main": "",
+  "typings": "./types",
   "directories": {
     "doc": "doc"
   },
