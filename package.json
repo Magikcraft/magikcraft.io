@@ -1,16 +1,15 @@
 {
   "name": "magikcraft.io",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "The Magikcraft API",
   "main": "",
-  "typings": "./types",
+  "typings": "./magikcraft.io",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "build": "node_modules/.bin/gulp intellisense",
     "build-doc": "node_modules/.bin/typedoc --readme src/README-doc.md --options typedoc.json",
-    "test": "echo \"I don't always test, but when do it's in production...\" && exit 1"
+    "test": "tsc --noImplicitAny --module commonjs test/magikcraft.io-tests.ts"
   },
   "author": "Josh Wulf <josh@magikcraft.io>",
   "license": "ISC",

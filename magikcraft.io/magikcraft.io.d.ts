@@ -71,7 +71,7 @@ declare namespace eventbus {
      * ```
      * 
      */
-    export function publish(topic: string, data: string | Object);
+    export function publish(topic: string, data: string | Object): void;
 
     /**
      * To cancel a subscription, you call the `cancel()` method of the subscription object returned from `eventbus.subscribe()`. However, sometimes you lose the reference to that object - or you want to unsubscribe a bunch of listeners all at once.
@@ -412,9 +412,9 @@ declare namespace magikcraft {
 
         export interface BukkitWorld {
             getBlockAt(location: BukkitLocation): BukkitBlock;
-            strikeLightning(location: BukkitLocation);
-            spawnEntity(location: BukkitLocation, entityType: any);
-            createExplosion(location: BukkitLocation, times: number);
+            strikeLightning(location: BukkitLocation): void;
+            spawnEntity(location: BukkitLocation, entityType: any): void;
+            createExplosion(location: BukkitLocation, times: number): void;
         }
 
         export interface BukkitBlock {
@@ -501,29 +501,29 @@ declare namespace magikcraft {
             removePlayer(player: BukkitPlayer): void;
             getColor(): BarsColor;
             getStyle(): BarsStyle;
-            setProperty(property: any, flag: boolean);
+            setProperty(property: any, flag: boolean): void;
             getMessage(): string;
-            setVisible(flag: boolean);
+            setVisible(flag: boolean): void;
             isVisible(): boolean;
             getProgress(): number;
             setProgress(progress: number): void;
         }
         export interface BarsColor {
-            readonly PINK;
-            readonly RED;
-            readonly GREEN;
-            readonly BLUE;
-            readonly YELLOW;
-            readonly PURPLE;
-            readonly WHITE;
+            readonly PINK: any;
+            readonly RED: any;
+            readonly GREEN: any;
+            readonly BLUE: any;
+            readonly YELLOW: any;
+            readonly PURPLE: any;
+            readonly WHITE: any;
         }
 
         export interface BarsStyle {
-            readonly PROGRESS;
-            readonly NOTCHED_6;
-            readonly NOTCHED_10;
-            readonly NOTCHED_12;
-            readonly NOTCHED_20;
+            readonly PROGRESS: any;
+            readonly NOTCHED_6: any;
+            readonly NOTCHED_10: any;
+            readonly NOTCHED_12: any;
+            readonly NOTCHED_20: any;
         }
 
         export class TextComponent {
