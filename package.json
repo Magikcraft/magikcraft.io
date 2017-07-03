@@ -1,6 +1,6 @@
 {
   "name": "magikcraft.io",
-  "version": "0.9.3",
+  "version": "0.9.5",
   "description": "The Magikcraft API",
   "main": "",
   "typings": "./types",
