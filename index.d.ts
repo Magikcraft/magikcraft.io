@@ -518,6 +518,13 @@ interface magik {
 }
 
 declare namespace http {
+
+    /**
+     * HTTP GET a resource from a URL
+     *
+     * @param {string} url
+     * @returns {*}
+     */
     function get(url: string): any;
     function post(url: string, data: any, contentType?: string): any;
 }
