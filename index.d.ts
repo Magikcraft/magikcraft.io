@@ -87,7 +87,7 @@ interface BossBar {
     addPlayer(player: BukkitPlayer): void;
     removePlayer(player: BukkitPlayer): void;
     getColor(): BarsColor;
-    setColor(color: BarsColor);
+    setColor(color: BarsColor): void;
     getStyle(): BarsStyle;
     setProperty(property: any, flag: boolean): void;
     getMessage(): string;
