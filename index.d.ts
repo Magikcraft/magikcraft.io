@@ -6,6 +6,15 @@
 
 type TextComponent = any;
 
+export interface ICanon {
+    sender: any,
+    plugin: any;
+    magik: any,
+    constant: any;
+    console: any;
+    globalLocale: string,
+    http: any;
+}
 interface BukkitLocation {
     setX(x: number): void;
     setY(y: number): void;
@@ -89,8 +98,10 @@ interface BossBar {
     getColor(): BarsColor;
     setColor(color: BarsColor): void;
     getStyle(): BarsStyle;
+    setStyle(style: BarsStyle): void;
     setProperty(property: any, flag: boolean): void;
     getMessage(): string;
+    setMessage(msg: string): void;
     setVisible(flag: boolean): void;
     isVisible(): boolean;
     getProgress(): number;
