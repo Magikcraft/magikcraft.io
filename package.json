@@ -3,7 +3,7 @@
   "version": "1.0.15",
   "description": "The Magikcraft API",
   "main": "",
-  "typings": "./magikcraft.io",
+  "typings": "./typings/index.d.ts",
   "directories": {
     "doc": "doc"
   },
