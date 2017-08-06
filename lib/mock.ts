@@ -112,7 +112,7 @@ class MockLocation implements BukkitLocation {
     getBlock = () => this.block;
 }
 
-export const Block = new MockBlock('GRANITE');
+// export const Block = new MockBlock('GRANITE');
 
 export const Player: BukkitPlayer = {
     addPotionEffect: nullfunc,
