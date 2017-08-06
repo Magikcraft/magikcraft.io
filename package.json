@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build-doc": "node_modules/.bin/typedoc --readme src/README-doc.md --options typedoc.json",
-    "test": "tsc --noImplicitAny --module commonjs test/magikcraft.io-tests.ts"
+    "test": "tsc --noImplicitAny --module commonjs test/magikcraft.io-tests.ts",
+    "precommit": "tsc -p tsconfig.json"
   },
   "author": "Josh Wulf <josh@magikcraft.io>",
   "license": "ISC",
@@ -18,5 +19,8 @@
     "gulp-concat": "^2.6.1",
     "typedoc": "^0.7.1",
     "typedoc-dash-theme": "^1.1.0"
+  },
+  "dependencies": {
+    "husky": "^0.14.3"
   }
 }
