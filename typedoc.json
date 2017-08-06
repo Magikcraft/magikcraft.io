@@ -6,7 +6,7 @@
   "ignoreCompilerErrors": "false",
   "excludePrivate": "true",
   "preserveConstEnums": "true",
-  "includes": "./magikcraft.io",
+  "includes": "./typings/index.d.ts",
   "excludeExternals": "true",
   "exclude": "node_modules/@types/*",
   "includeDeclarations": "true",
