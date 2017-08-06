@@ -7,14 +7,19 @@
 type TextComponent = any;
 
 export interface ICanon {
-    sender: any,
-    plugin: any;
-    magik: any,
-    constant: any;
+    _darkmagik_: any;
     console: any;
-    globalLocale: string,
+    constant: any;
+    globalLocale: string;
     http: any;
+    localiseMsg: any;
+    log: any;
+    magik: any;
+    MSG: any;
+    plugin: any;
+    sender: any;
 }
+
 interface BukkitLocation {
     setX(x: number): void;
     setY(y: number): void;
