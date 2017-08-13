@@ -1,6 +1,10 @@
 import { BukkitBlock, BukkitBlockType, BukkitLocation, BukkitWorld, ICanon, vector, BukkitPlayer } from '../typings';
-declare const global;
+declare const global: any;
+declare const console: any;
 
+global.Java = {
+    type: (_type: string) => () => ({class: 'org.magikcraft.dummy'})
+}
 const nullfunc = () => null;
 
 global.magikcraft = {
@@ -43,10 +47,10 @@ export const canon: ICanon = {
 
 class MockBlockType implements BukkitBlockType {
     private type: string;
-    constructor(type) {
+    constructor(type: string) {
         this.type = type;
     }
-    equals = _type =>  (this.type = _type);
+    equals = (_type: any) =>  (this.type = _type);
 }
 
 class MockWorld implements BukkitWorld {
@@ -57,18 +61,18 @@ class MockWorld implements BukkitWorld {
 }
 
 class MockBlock implements BukkitBlock {
-    _type;
-    constructor(_type) {
+    _type: any;
+    constructor(_type: any) {
         this._type = new MockBlockType(_type)
     }
     location = new MockLocation();
     getRelative = () => this;
     getType = () => this._type;
-    setType = (_type) => this._type = new MockBlockType(_type);
+    setType = (_type: any) => this._type = new MockBlockType(_type);
 }
 
 class MockVector implements vector {
-    multiply = (v) => v;
+    multiply = (v: number) => this;
 }
 
 class MockLocation implements BukkitLocation {
@@ -84,27 +88,27 @@ class MockLocation implements BukkitLocation {
 
     }
     clone = () => this;
-    setX(x) {
+    setX(x: number) {
         this.X = x;
     }
     getX = () => this.X;
-    setY(y) {
+    setY(y: number) {
         this.Y = y;
     }
     getY = () => this .Y;
-    setZ(z) {
+    setZ(z: number) {
         this.Z = z;
     }
     getZ = () => this.Z;
-    setPitch(p) {
+    setPitch(p: number) {
         this.pitch = p;
     }
     getPitch = () => this.pitch;
-    setYaw(y) {
+    setYaw(y: number) {
         this.yaw = y;
     }
     getYaw = () => this.yaw;
-    setWorld(w){
+    setWorld(w: any){
         this.world = w;
     }
     getDirection = () => new MockVector();

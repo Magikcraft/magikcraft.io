@@ -6,6 +6,13 @@
 
 type TextComponent = any;
 
+declare interface IMagikCraftAPI {
+    getMappedItem: () => string;
+    setMappedItem: (key: string, value: string) => void;
+    getSpellsList: (sender: BukkitPlayer, senderName: string) => string[];
+}
+
+declare const MagikCraftAPI: IMagikCraftAPI;
 export interface ICanon {
     _darkmagik_: any;
     console: any;
@@ -128,6 +135,19 @@ interface BarsStyle {
     readonly NOTCHED_10: any;
     readonly NOTCHED_12: any;
     readonly NOTCHED_20: any;
+}
+
+declare namespace Java {
+    /**
+     *
+     * Return a reference to a Java class. In the Nashorn JavaScript engine you can instantiate Java class instances and get a JavaScript reference to them.
+     *
+     * Example:
+     * ```
+     *
+     * ```
+     */
+    export function type(classname: string): any;
 }
 interface magik {
     /**
@@ -661,5 +681,12 @@ declare namespace Java {
 }
 
 declare const magikcraft: {io: magik};
+
+declare namespace mock {
+
+}
+
+import * as _mock from '../lib/mock';
+declare const mock: typeof _mock;
 
 // export { };

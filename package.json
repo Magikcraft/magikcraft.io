@@ -2,8 +2,11 @@
   "name": "magikcraft.io",
   "version": "1.1.1",
   "description": "The Magikcraft API",
-  "main": "",
+  "main": "./index.js",
   "typings": "./typings/index.d.ts",
+  "bin": {
+    "localize": "./bin/localize.js"
+  },
   "directories": {
     "doc": "doc"
   },
