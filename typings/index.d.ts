@@ -663,25 +663,6 @@ declare namespace eventbus {
     function cancelAllSubscriptions(): boolean;
 }
 
-/**
- * Access underlying Java classes.
- *
- * @interface Java
- *
- */
-declare namespace Java {
-    /**
-     *
-     * Return a reference to a Java class. In the Nashorn JavaScript engine you can instantiate Java class instances and get a JavaScript reference to them.
-     *
-     * Example:
-     * ```
-     *
-     * ```
-     */
-    function type(classname: string): any;
-}
-
 declare const magikcraft: {io: magik};
 
 declare namespace mock {
