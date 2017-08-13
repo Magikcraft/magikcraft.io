@@ -4,6 +4,9 @@
   "description": "The Magikcraft API",
   "main": "./index.js",
   "typings": "./typings/index.d.ts",
+  "bin": {
+    "localize": "./bin/localize.js"
+  },
   "directories": {
     "doc": "doc"
   },
