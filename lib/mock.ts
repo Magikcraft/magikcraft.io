@@ -35,12 +35,14 @@ export const canon: ICanon = {
     _darkmagik_: {},
     console,
     constant: {},
+    displayLocalMsg: (msg) => console.log(msg),
     globalLocale: 'en-US',
     http: {},
-    localiseMsg: {},
+    localiseMsg: (msg) => msg,
     log: console.log,
     magik: {},
     MSG: {},
+    msg: (msg_id) => msg_id,
     plugin: {},
     sender: {}
 }
