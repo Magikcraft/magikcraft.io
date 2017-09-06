@@ -1,4 +1,4 @@
-import { BukkitBlock, BukkitBlockType, BukkitLocation, BukkitWorld, ICanon, vector, BukkitPlayer } from '../typings';
+import { BukkitBlock, BukkitBlockType, BukkitLocation, BukkitWorld, BukkitWorldBorder, ICanon, vector, BukkitPlayer } from '../typings';
 declare const global: any;
 declare const console: any;
 
@@ -56,10 +56,21 @@ class MockBlockType implements BukkitBlockType {
 }
 
 class MockWorld implements BukkitWorld {
+    private worldBorder = new MockWorldBorder();
     getBlockAt = (location: BukkitLocation) => new MockBlock('GRANITE');
     strikeLightning = () => {};
     spawnEntity = () => {};
     createExplosion = () => {};
+    getWorldBorder = () => this.worldBorder;
+    setWorldBorder = border => this.worldBorder = border;
+}
+
+class MockWorldBorder implements BukkitWorldBorder {
+    private size = 60000000;
+    private center;
+    getSize = () => this.size;
+    setSize = size => this.size = size;
+    setCenter = (location) => this.center = location;
 }
 
 class MockBlock implements BukkitBlock {
