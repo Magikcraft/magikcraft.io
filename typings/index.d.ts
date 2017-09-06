@@ -6,6 +6,7 @@
 
 type TextComponent = any;
 
+
 declare interface IMagikCraftAPI {
     getMappedItem: () => string;
     setMappedItem: (key: string, value: string) => void;
@@ -13,7 +14,7 @@ declare interface IMagikCraftAPI {
 }
 
 declare const MagikCraftAPI: IMagikCraftAPI;
-export interface ICanon {
+interface ICanon {
     _darkmagik_: any;
     console: any;
     constant: any;
@@ -27,6 +28,23 @@ export interface ICanon {
     msg: (msg_id: string) => void;
     plugin: any;
     sender: any;
+}
+
+interface HashMap {
+    clear(): void;
+    clone(): HashMap;
+    containsKey(key: string): boolean;
+    containsValue(value: any): boolean;
+    entrySet(): Set<any>;
+    get(key: string): any | undefined;
+    isEmpty(): boolean;
+    keySet(): Set<string>;
+    put(key: string, value: any): void;
+    putAll(map: HashMap): void;
+    remove(key: string): void;
+    size(): number;
+    values(): any[];
+    toString(): string;
 }
 
 interface BukkitLocation {
@@ -53,11 +71,17 @@ interface vector {
     multiply(num: number): vector;
 }
 
+interface BukkitWorldBorder {
+    getSize(): number;
+    setSize(size: number): void;
+    setCenter(location: BukkitLocation): void;
+}
 interface BukkitWorld {
     getBlockAt(location: BukkitLocation): BukkitBlock;
     strikeLightning(location: BukkitLocation): void;
     spawnEntity(location: BukkitLocation, entityType: any): void;
     createExplosion(location: BukkitLocation, times: number): void;
+    getWorldBorder(): BukkitWorldBorder;
 }
 
 interface BukkitBlock {
@@ -152,6 +176,33 @@ declare namespace Java {
     export function type(classname: string): any;
 }
 interface magik {
+
+    /**
+     *
+     * A HashMap that survives engine reload, but not quitting and rejoining the server.
+     *
+     * @type {HashMap}
+     * @memberof magik
+     */
+    playerMap: HashMap;
+
+    /**
+     *
+     * A HashMap that survives engine reload and quitting and rejoining the server, but not server reboot.
+     *
+     * @type {HashMap}
+     * @memberof magik
+     */
+    durablePlayerMap: HashMap;
+
+    /**
+     *
+     * A shared state HashMap that is persistent for the lifecycle of the server, and is accessible from all players' engines.
+     *
+     * @type {HashMap}
+     * @memberof magik
+     */
+    globalMap: HashMap;
     /**
      * Return a Java class reference to an org.bukkit.* class.
      *
@@ -663,26 +714,9 @@ declare namespace eventbus {
     function cancelAllSubscriptions(): boolean;
 }
 
-/**
- * Access underlying Java classes.
- *
- * @interface Java
- *
- */
-declare namespace Java {
-    /**
-     *
-     * Return a reference to a Java class. In the Nashorn JavaScript engine you can instantiate Java class instances and get a JavaScript reference to them.
-     *
-     * Example:
-     * ```
-     *
-     * ```
-     */
-    function type(classname: string): any;
-}
-
 declare const magikcraft: {io: magik};
+declare const require: (modulename: string) => any;
+
 
 declare namespace mock {
 
