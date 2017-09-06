@@ -66,11 +66,11 @@ class MockWorld implements BukkitWorld {
 }
 
 class MockWorldBorder implements BukkitWorldBorder {
-    private size = 60000000;
-    private center;
+    private size: number = 60000000;
+    private center: MockLocation;
     getSize = () => this.size;
     setSize = size => this.size = size;
-    setCenter = (location) => this.center = location;
+    setCenter = (location: MockLocation) => this.center = location;
 }
 
 class MockBlock implements BukkitBlock {
