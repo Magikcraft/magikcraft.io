@@ -62,14 +62,13 @@ class MockWorld implements BukkitWorld {
     spawnEntity = () => {};
     createExplosion = () => {};
     getWorldBorder = () => this.worldBorder;
-    setWorldBorder = border => this.worldBorder = border;
 }
 
 class MockWorldBorder implements BukkitWorldBorder {
     private size: number = 60000000;
     private center: MockLocation;
     getSize = () => this.size;
-    setSize = size => this.size = size;
+    setSize = (size: number) => this.size = size;
     setCenter = (location: MockLocation) => this.center = location;
 }
 
