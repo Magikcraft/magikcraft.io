@@ -30,6 +30,18 @@ interface ICanon {
     sender: any;
 }
 
+interface Set<T> {
+    add: (item: T) => boolean;
+    contains: (item: T) => boolean;
+    equals: (set: Set<any>) => boolean;
+    hashCode: () => number;
+    isEmpty: () => boolean;
+    remove: (o: any) => boolean;
+    size: () => number;
+    toArray: () => T[];
+    clear: () => void;
+}
+
 interface HashMap {
     clear(): void;
     clone(): HashMap;
@@ -607,8 +619,9 @@ interface magik {
     infierno(): void;
 }
 
-declare namespace http {
+type CPSCallback = (err: any, result: any) => void;
 
+declare namespace http {
     /**
      * HTTP GET a resource from a URL
      *
@@ -616,7 +629,9 @@ declare namespace http {
      * @returns {*}
      */
     function get(url: string): any;
-    function post(url: string, data: any, contentType?: string): any;
+    function post (url: string, data:string): void;
+    function post (url: string, data: string, callback?: CPSCallback): void;
+    function post (url: string, data: string, contentType?: string, callback?: CPSCallback): void;
 }
 /**
  * The eventbus is a global pub/sub system. It is useful for your own code, and it also the mechanism that allows your code to communicate with code that others are running on the server.
