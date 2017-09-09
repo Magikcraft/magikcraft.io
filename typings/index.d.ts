@@ -30,6 +30,18 @@ interface ICanon {
     sender: any;
 }
 
+interface Set<T> {
+    add: (item: T) => boolean;
+    contains: (item: T) => boolean;
+    equals: (set: Set<any>) => boolean;
+    hashCode: () => number;
+    isEmpty: () => boolean;
+    remove: (o: any) => boolean;
+    size: () => number;
+    toArray: () => T[];
+    clear: () => void;
+}
+
 interface HashMap {
     clear(): void;
     clone(): HashMap;
