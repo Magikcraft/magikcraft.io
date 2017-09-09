@@ -187,6 +187,7 @@ declare namespace Java {
      */
     export function type(classname: string): any;
 }
+
 interface magik {
 
     /**
@@ -730,9 +731,12 @@ declare namespace eventbus {
 }
 
 declare const magikcraft: {io: magik};
-declare const require: (modulename: string) => any;
 
+// The following line is needed in the Play App editor
+// declare const require: (modulename: string) => any;
 
+// The following mock declaration kill intellisense in VS Code.
+/**
 declare namespace mock {
 
 }
@@ -740,4 +744,4 @@ declare namespace mock {
 import * as _mock from '../lib/mock';
 declare const mock: typeof _mock;
 
-// export { };
+**/
