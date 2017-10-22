@@ -6,7 +6,6 @@
 
 type TextComponent = any;
 
-
 declare interface IMagikCraftAPI {
     getMappedItem: () => string;
     setMappedItem: (key: string, value: string) => void;
@@ -14,7 +13,7 @@ declare interface IMagikCraftAPI {
 }
 
 declare const MagikCraftAPI: IMagikCraftAPI;
-interface ICanon {
+declare interface ICanon {
     _darkmagik_: any;
     console: any;
     constant: any;
@@ -116,8 +115,13 @@ interface BukkitPlayer {
     getLocation(): BukkitLocation;
     getEyeLocation(): BukkitLocation;
     getLineOfSight(blocks: BukkitMaterial[], maxDistance: number): BukkitBlock[];
+    getInventory(): BukkitInventory;
     launchProjectile(projectileType: any): void;
     isSneaking(): boolean;
+}
+
+interface BukkitInventory {
+    addItem(item: any);
 }
 
 type BukkitPlugin = any;
@@ -190,6 +194,7 @@ declare namespace Java {
 
 interface magik {
 
+    Events: EventEmitter;
     /**
      *
      * A HashMap that survives engine reload, but not quitting and rejoining the server.
