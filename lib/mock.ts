@@ -130,6 +130,10 @@ class MockLocation implements BukkitLocation {
 
 // export const Block = new MockBlock('GRANITE');
 
+export const Inventory: BukkitInventory = {
+    addItem: (item) => undefined
+}
+
 export const Player: BukkitPlayer = {
     addPotionEffect: nullfunc,
     getFoodLevel: () => 3,
@@ -140,5 +144,7 @@ export const Player: BukkitPlayer = {
     getEyeLocation: () => new MockLocation(),
     getLineOfSight: (blocks, maxDistance) => [new MockBlock('GRANITE')],
     launchProjectile: () => {},
-    isSneaking: () => true
+    isSneaking: () => true,
+    getInventory:() => Inventory
 }
+
