@@ -12,6 +12,7 @@ interface ArrayConstructor {
 
 // String.padStart and String.padEnd polyfills
 interface String {
+    repeat(count: number): string
     /**
       * Pads the current string with a given string (possibly repeated) so that the resulting string reaches a given length.
       * The padding is applied from the start (left) of the current string.
